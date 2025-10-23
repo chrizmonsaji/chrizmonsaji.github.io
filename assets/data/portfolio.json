@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Secure Web Application",
+    "category": "web",
+    "description": "Full-stack application with authentication and cloud deployment",
+    "thumbnail": "web-dev-project.jpg",
+    "images": ["web-dev-project.jpg", "web-dev-project-2.jpg"],
+    "date": "2024-08",
+    "tags": ["Python", "JavaScript", "AWS", "Security"],
+    "external_link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Penetration Testing Tool",
+    "category": "security",
+    "description": "Custom security assessment utility",
+    "thumbnail": "hacking-tool.jpg",
+    "images": ["hacking-tool.jpg", "hacking-tool-2.jpg"],
+    "date": "2024-06",
+    "tags": ["Python", "Ethical Hacking", "Automation"],
+    "external_link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Linux Automation Suite",
+    "category": "tools",
+    "description": "Bash scripts for system administration",
+    "thumbnail": "automation-tool.jpg",
+    "images": ["automation-tool.jpg", "automation-tool-2.jpg"],
+    "date": "2024-05",
+    "tags": ["Bash", "Linux", "Automation"],
+    "external_link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Minecraft Adventure Pack",
+    "category": "minecraft",
+    "description": "Custom gameplay mechanics using Scripting API",
+    "thumbnail": "minecraft-mod.jpg",
+    "images": ["minecraft-mod.jpg", "minecraft-mod-2.jpg"],
+    "date": "2024-04",
+    "tags": ["Minecraft", "JavaScript", "Game Development"],
+    "external_link": "#"
+  },
+  {
+    "id": 5,
+    "title": "Cloud Infrastructure",
+    "category": "web",
+    "description": "AWS/Oracle deployment with CI/CD pipeline",
+    "thumbnail": "cloud-app.jpg",
+    "images": ["cloud-app.jpg", "cloud-app-2.jpg"],
+    "date": "2024-03",
+    "tags": ["AWS", "Oracle", "CI/CD", "DevOps"],
+    "external_link": "#"
+  },
+  {
+    "id": 6,
+    "title": "Forensics Analysis Tool",
+    "category": "security",
+    "description": "Utility for digital evidence collection",
+    "thumbnail": "forensics-tool.jpg",
+    "images": ["forensics-tool.jpg", "forensics-tool-2.jpg"],
+    "date": "2024-02",
+    "tags": ["Python", "Forensics", "Security"],
+    "external_link": "#"
+  }
+]

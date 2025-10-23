@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "title": "CTO, TechCorp",
+    "avatar": "testimonial-1.jpg",
+    "rating": 5,
+    "text": "Chris delivered exceptional results for our security audit. His attention to detail and thorough approach identified critical vulnerabilities we had missed. Highly recommended for any security project.",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "title": "Project Manager, StartupXYZ",
+    "avatar": "testimonial-2.jpg",
+    "rating": 5,
+    "text": "Working with Chris on our full-stack application was a pleasure. He's technically proficient, communicates well, and delivered on time. His cloud deployment expertise was particularly valuable.",
+    "date": "2024-07-22"
+  },
+  {
+    "id": 3,
+    "name": "Mike Johnson",
+    "title": "Lead Developer, GameDev Studios",
+    "avatar": "testimonial-3.jpg",
+    "rating": 5,
+    "text": "Chris created amazing Minecraft behavior packs for our project. His creativity and technical skills with the Scripting API brought our game concepts to life. Will definitely work with him again.",
+    "date": "2024-06-30"
+  },
+  {
+    "id": 4,
+    "name": "Sarah Wilson",
+    "title": "Security Lead, FinSecure",
+    "avatar": "testimonial-4.jpg",
+    "rating": 5,
+    "text": "The penetration testing report from Chris was comprehensive and actionable. He identified several high-risk areas and provided clear remediation steps. His expertise is evident in every project.",
+    "date": "2024-05-18"
+  }
+]

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- 1. Added lang attribute with dynamic code -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 2. Improved viewport tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Mon Saji | Security Researcher & Dev</title>
+    <meta name="description" content="Personal portfolio of Chris Mon Saji - Cyber Security Student & Full-Stack Developer">
+    <!-- 3. Improved favicon link with multiple sizes/types -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+    <!-- 4. Preconnect to Google Fonts (good job here!) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 5. Optimized font loading: subset, display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&subset=latin&display=swap" rel="stylesheet">
+
+    <!-- 6. Inline critical CSS (if you have it) or preload full CSS -->
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    <!-- If you inline critical CSS, remove the preload/noscript block above and uncomment below -->
+    <!-- <style>/* Critical CSS would go here */</style> -->
+</head>
+<body>
+    <!-- 7. Improved semantic structure -->
+    <header class="scanline-overlay" aria-label="Visual Effect"></header> <!-- Added aria-label -->
+
+    <div class="layout-container">
+        <!-- 8. Improved navigation structure with landmarks -->
+        <nav class="vertical-nav" aria-label="Main navigation">
+            <div class="nav-profile">
+                <div class="avatar-container">
+                    <!-- 9. Improved image accessibility: loading, decoding, sizes (if needed) -->
+                    <img src="https://i.ibb.co/XfnHJmS0/avatar.jpg"
+                         alt="Profile picture of Chris Mon Saji"
+                         class="avatar"
+                         loading="eager"
+                         decoding="async">
+                    <div class="status-indicator online" aria-label="Status: Online"></div>
+                </div>
+            </div>
+
+            <!-- 10. Improved menu structure with ARIA -->
+            <ul class="nav-menu" role="menubar">
+                <li role="none">
+                    <a href="index.html" class="nav-link active" aria-current="page" role="menuitem">
+                        <svg class="nav-icon" aria-hidden="true"><use href="#home-icon"></use></svg>
+                        <span class="nav-label">Home</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="about.html" class="nav-link" role="menuitem">
+                        <svg class="nav-icon" aria-hidden="true"><use href="#about-icon"></use></svg>
+                        <span class="nav-label">About</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="resume.html" class="nav-link" role="menuitem">
+                        <svg class="nav-icon" aria-hidden="true"><use href="#resume-icon"></use></svg>
+                        <span class="nav-label">Resume</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="portfolio.html" class="nav-link" role="menuitem">
+                        <svg class="nav-icon" aria-hidden="true"><use href="#portfolio-icon"></use></svg>
+                        <span class="nav-label">Portfolio</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="testimonials.html" class="nav-link" role="menuitem">
+                        <svg class="nav-icon" aria-hidden="true"><use href="#testimonials-icon"></use></svg>
+                        <span class="nav-label">Testimonials</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="contact.html" class="nav-link" role="menuitem">
+                        <svg class="nav-icon" aria-hidden="true"><use href="#contact-icon"></use></svg>
+                        <span class="nav-label">Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-footer">
+                <a href="assets/data/cv.pdf" class="download-btn" download aria-label="Download Resume as PDF">
+                    <svg class="nav-icon" aria-hidden="true"><use href="#download-icon"></use></svg>
+                    <span class="nav-label">wget cv.pdf</span>
+                </a>
+
+                <div class="social-links" aria-label="Social media links">
+                    <a href="https://discord.gg/SKY-TECHCRAFTS" target="_blank" rel="noopener noreferrer" aria-label="Join Discord community">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1 14.66 14.66 0 0 0-4.58 0 10.14 10.14 0 0 0-.53-1.1 16 16 0 0 0-4.13 1.3 17.33 17.33 0 0 0-3 11.59 16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83 3.39 3.39 0 0 0 .42-.33 11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84 12.41 12.41 0 0 0 1.08 1.78 16.44 16.44 0 0 0 5.06-2.59 17.22 17.22 0 0 0-3-11.59 16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.93 1.93 0 0 1 1.8 2 1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.92 1.92 0 0 1 1.8 2 1.92 1.92 0 0 1-1.8 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/chrizmonsaji" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 11. Improved main content structure -->
+        <main class="main-content" id="main-content"> <!-- Added id for skip link if needed -->
+            <section class="hero-section" aria-labelledby="hero-heading">
+                <div class="hero-card">
+                    <div class="hero-text">
+                        <div class="hero-label">HI THERE!</div>
+                        <h1 class="hero-heading" id="hero-heading">I'M <span class="highlight">CHRIZ</span></h1> <!-- Added id -->
+                        <h2 class="hero-subheading">Security Researcher & Full-Stack Developer</h2>
+                        <!-- 12. Improved terminal prompt accessibility -->
+                        <div class="terminal-prompt" role="status" aria-live="polite">
+                            <span class="cursor" id="terminal-cursor" aria-label="Cursor">></span>
+                            <span id="terminal-text">ready to handle your next project</span>
+                        </div>
+                        <p class="hero-bio">Cyber Forensics & Cyber Security student | Ethical Hacker | Linux & Cloud Enthusiast | Minecraft Modder</p>
+                        <a href="about.html" class="hero-cta">MORE ABOUT ME</a>
+                    </div>
+
+                    <div class="hero-image">
+                        <!-- 13. Used same image for profile pic (or update path if local) -->
+                        <img src="https://i.ibb.co/XfnHJmS0/avatar.jpg"
+                             alt="Chris Mon Saji Profile"
+                             class="profile-image"
+                             loading="eager"
+                             decoding="async">
+                    </div>
+                </div>
+
+                <!-- 14. Improved skills list semantics -->
+                <div class="hero-skills" aria-label="Technical Skills">
+                    <span class="skill-icon">Python</span>
+                    <span class="skill-icon">Linux</span>
+                    <span class="skill-icon">Ethical Hacking</span>
+                    <span class="skill-icon">Cloud</span>
+                    <span class="skill-icon">Web Dev</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 15. Moved SVG sprite outside body for potential reuse, or kept inside if it's page-specific -->
+    <!-- If SVGs are used across pages, consider moving to an external file or injecting via JS -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="home-icon" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </symbol>
+        <symbol id="about-icon" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </symbol>
+        <symbol id="resume-icon" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </symbol>
+        <symbol id="portfolio-icon" viewBox="0 0 24 24">
+            <path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11.5-6L8 14.5 9.5 16 12 13.5 14.5 16 16 14.5 13.5 12 16 9.5 14.5 8 12 10.5 9.5 8 8 9.5l2.5 2.5zM2 20v-4h2v4h4v2H4c-1.1 0-2-.9-2-2z"/>
+        </symbol>
+        <symbol id="testimonials-icon" viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+        </symbol>
+        <symbol id="contact-icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </symbol>
+        <symbol id="download-icon" viewBox="0 0 24 24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </symbol>
+        <symbol id="terminal-icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 11.5V17h-2v-1.5H8v-2h2V12h2v1.5h2V15h-2v1.5zm4-5.5H8V7h8v2z"/>
+        </symbol>
+    </svg>
+
+    <!-- 16. Optimized script loading -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
