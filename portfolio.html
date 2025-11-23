@@ -3,15 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Chris Mon Saji</title>
-    <meta name="description" content="Portfolio of Chris Mon Saji - Cyber Security Student & Full-Stack Developer">
+    <title>Portfolio | Chriz</title>
+    <meta name="description" content="Portfolio of Chriz - Cyber Security Student & Full-Stack Developer">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .scanline-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        .layout-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Navigation styles */
+        .vertical-nav {
+            width: 80px;
+            background: rgba(20, 20, 20, 0.95);
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid #333;
+        }
+
+        .nav-profile {
+            margin-bottom: 30px;
+        }
+
+        .avatar-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid #4a90e2;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid #0a0a0a;
+        }
+
+        .status-indicator.online {
+            background: #4caf50;
+        }
+
+        .nav-menu {
+            list-style: none;
+            width: 100%;
+            margin-bottom: auto;
+        }
+
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 0;
+            text-decoration: none;
+            color: #aaa;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #4a90e2;
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: #4a90e2;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .nav-footer {
+            margin-top: auto;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .download-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 0;
+            text-decoration: none;
+            color: #aaa;
+            transition: color 0.3s;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .download-btn:hover {
+            color: #4a90e2;
+            border-color: #4a90e2;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #4a90e2;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .portfolio-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4a90e2;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #4a90e2;
+            color: #4a90e2;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #4a90e2;
+            color: #0a0a0a;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(74, 144, 226, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .portfolio-overlay p {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4a90e2;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .portfolio-link:hover {
+            background: #3a7bc8;
+        }
+
+        .disclaimer {
+            font-size: 0.75em;
+            color: #ff6b6b;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .badge {
+            font-size: 0.7em;
+            background: #5e81ac;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        .badge.hardware { background: #e67e22; }
+        .badge.browser { background: #9b59b6; }
+        .badge.community { background: #8e44ad; }
+    </style>
 </head>
 <body>
     <div class="scanline-overlay"></div>
@@ -21,7 +328,7 @@
         <nav class="vertical-nav">
             <div class="nav-profile">
                 <div class="avatar-container">
-                    <img src="https://i.ibb.co/XfnHJmS0/avatar.jpg" alt="Chris Mon Saji" class="avatar">
+                    <img src="https://via.placeholder.com/48x48" alt="Chriz" class="avatar">
                     <div class="status-indicator online"></div>
                 </div>
             </div>
@@ -88,8 +395,9 @@
                 </div>
                 
                 <div class="portfolio-grid">
+                    <!-- Existing projects -->
                     <div class="portfolio-item" data-category="web">
-                        <img src="assets/img/portfolio/web-dev-project.jpg" alt="Full-Stack Web Application">
+                        <img src="https://via.placeholder.com/300x200" alt="Full-Stack Web Application" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Secure Web App</h3>
                             <p>Full-stack application with authentication and cloud deployment</p>
@@ -98,7 +406,7 @@
                     </div>
                     
                     <div class="portfolio-item" data-category="security">
-                        <img src="assets/img/portfolio/hacking-tool.jpg" alt="Ethical Hacking Tool">
+                        <img src="https://via.placeholder.com/300x200" alt="Ethical Hacking Tool" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Penetration Testing Tool</h3>
                             <p>Custom security assessment utility</p>
@@ -107,7 +415,7 @@
                     </div>
                     
                     <div class="portfolio-item" data-category="tools">
-                        <img src="assets/img/portfolio/automation-tool.jpg" alt="Automation Script">
+                        <img src="https://via.placeholder.com/300x200" alt="Automation Script" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Linux Automation Suite</h3>
                             <p>Bash scripts for system administration</p>
@@ -116,7 +424,7 @@
                     </div>
                     
                     <div class="portfolio-item" data-category="minecraft">
-                        <img src="assets/img/portfolio/minecraft-mod.jpg" alt="Minecraft Behavior Pack">
+                        <img src="https://via.placeholder.com/300x200" alt="Minecraft Behavior Pack" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Minecraft Adventure Pack</h3>
                             <p>Custom gameplay mechanics using Scripting API</p>
@@ -125,7 +433,7 @@
                     </div>
                     
                     <div class="portfolio-item" data-category="web">
-                        <img src="assets/img/portfolio/cloud-app.jpg" alt="Cloud Application">
+                        <img src="https://via.placeholder.com/300x200" alt="Cloud Application" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Cloud Infrastructure</h3>
                             <p>AWS/Oracle deployment with CI/CD pipeline</p>
@@ -134,11 +442,95 @@
                     </div>
                     
                     <div class="portfolio-item" data-category="security">
-                        <img src="assets/img/portfolio/forensics-tool.jpg" alt="Digital Forensics Tool">
+                        <img src="https://via.placeholder.com/300x200" alt="Digital Forensics Tool" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Forensics Analysis Tool</h3>
                             <p>Utility for digital evidence collection</p>
                             <a href="#" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <!-- New projects -->
+                    <div class="portfolio-item" data-category="security">
+                        <img src="https://via.placeholder.com/300x200" alt="DigiSpark USB HID password strength tester" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>DigiSpark Password Tester</h3>
+                            <p>Hardware-based USB HID tool using ATtiny85 to simulate keystrokes for ethical password strength validation.</p>
+                            <a href="https://github.com/chrizmonsaji/digispark-password-tester" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="security">
+                        <img src="https://via.placeholder.com/300x200" alt="Bash scripts for automated Linux system hardening" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Linux Hardening Suite</h3>
+                            <p>Custom Bash & Python tools for file integrity checks, log anomaly detection, and CIS-compliant hardening on Linux Lite.</p>
+                            <a href="https://github.com/chrizmonsaji/linux-hardening-tools" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="web">
+                        <img src="https://via.placeholder.com/300x200" alt="Installable Progressive Web App for students" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Student PWA</h3>
+                            <p>Lightweight, offline-capable PWA built with vanilla JS—installable on desktop/mobile, zero dependencies.</p>
+                            <a href="https://student-pwa.chrizmonsaji.github.io" class="portfolio-link">Live Demo</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="minecraft">
+                        <img src="https://via.placeholder.com/300x200" alt="Minecraft Bedrock server with custom anti-cheat and analytics" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Sky Tech & Crafts Server</h3>
+                            <p>Modded Bedrock server featuring custom anti-cheat logic, player behavior analytics, and automated moderation via scripting API.</p>
+                            <a href="https://discord.gg/d2NDkmbYPp" class="portfolio-link">Join Server</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="tools">
+                        <img src="https://via.placeholder.com/300x200" alt="Secure cloud infrastructure on Oracle and AWS" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Secure Cloud Deployments</h3>
+                            <p>Infrastructure-as-Code deployments on OCI & AWS with least-privilege IAM, encrypted storage, and isolated VPCs.</p>
+                            <a href="https://github.com/chrizmonsaji/cloud-labs" class="portfolio-link">View Repo</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="tools">
+                        <img src="https://via.placeholder.com/300x200" alt="SpectreConky - Futuristic Conky Widget for Linux" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>SpectreConky <span class="badge">Linux</span></h3>
+                            <p>Minimalist, auto-starting Conky widget inspired by Rainmeter's "Spectre" — displays day, date, and time in bold Researcher font on transparent background.</p>
+                            <a href="https://github.com/chrizmonsaji/SpectreConky" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="security">
+                        <img src="https://via.placeholder.com/300x200" alt="ATtiny85 USB Brute-Force PIN Cracker - Hardware Security Tool" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>ATtiny85 PIN Cracker <span class="badge hardware">Hardware</span></h3>
+                            <p>Minimalist USB HID tool using ATtiny85 + V-USB to sequentially brute-force 4-digit PINs (0000–9999). Built for educational & authorized testing only.</p>
+                            <p class="disclaimer">⚠️ For educational use only. Never deploy on unauthorized systems.</p>
+                            <a href="https://github.com/chrizmonsaji/ATtiny85-USB-Brute-Force-PIN" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="tools">
+                        <img src="https://via.placeholder.com/300x200" alt="Chriz's Discord Quest Automator - Browser Script for Nitro Quests" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Discord Quest Automator <span class="badge browser">Browser</span></h3>
+                            <p>JavaScript tool that auto-completes Discord Nitro quests by spoofing video, game, and stream activity. Features rotating messages and integrated contact info.</p>
+                            <p class="disclaimer">⚠️ EDUCATIONAL PURPOSES ONLY — May violate Discord TOS. Use at your own risk.</p>
+                            <a href="https://gist.github.com/chrizmonsaji/762ef05a44135bf1275c7a94664d388f" class="portfolio-link">View Script</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="minecraft">
+                        <img src="https://via.placeholder.com/300x200" alt="Sky Realms S2 - Custom Minecraft Bedrock SMP Server" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Sky Realms S2 <span class="badge community">Community</span></h3>
+                            <p>Custom Minecraft Bedrock SMP server with anti-cheat, player analytics, and automated moderation. Built for builders, adventurers, and tech enthusiasts.</p>
+                            <a href="https://discord.gg/B9cY7gGXSt" class="portfolio-link">Join Server</a>
                         </div>
                     </div>
                 </div>
@@ -174,6 +566,31 @@
         </symbol>
     </svg>
 
-    <script src="assets/js/main.js"></script>
+    <script>
+        // Portfolio filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
