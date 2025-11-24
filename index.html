@@ -19,11 +19,13 @@
     <!-- 5. Optimized font loading: subset, display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&subset=latin&display=swap" rel="stylesheet">
 
-    <!-- 6. Inline critical CSS (if you have it) or preload full CSS -->
-    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
-    <!-- If you inline critical CSS, remove the preload/noscript block above and uncomment below -->
-    <!-- <style>/* Critical CSS would go here */</style> -->
+    <!-- 6. Preload optimized CSS for better performance -->
+    <link rel="preload" href="assets/css/style-optimized.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style-optimized.min.css"></noscript>
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//i.ibb.co">
 </head>
 <body>
     <!-- 7. Improved semantic structure -->
@@ -174,6 +176,6 @@
     </svg>
 
     <!-- 16. Optimized script loading -->
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main-optimized.min.js" defer></script>
 </body>
 </html>
