@@ -1,0 +1,8 @@
+```
+# Build artifacts
+*.min.css
+*.min.js
+*.optimized.css
+*.optimized.js
+performance-build.sh
+```
